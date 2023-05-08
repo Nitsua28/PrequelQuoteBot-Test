@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { TestActorPictureAndMemesComponent } from './testComponents/testActorPicture';
-import { actorPictures, prequelsmemes, originaltrilogymemes } from './quoteData';
+import { actorPictures, prequelsmemes, originaltrilogymemes, sequelsmemes } from './quoteData';
 import * as AWS from 'aws-sdk'
 import { ConfigurationOptions } from 'aws-sdk'
 import { TestGifComponent } from './testComponents/testGifComponent';
@@ -85,6 +85,14 @@ function App() {
       <h2>Original Trilogy Memes Errors</h2>
       {
         originaltrilogymemes.map(([key,value]) => (
+          <TestActorPictureAndMemesComponent name={key}link={value}/>
+        ))
+        
+      }
+
+      <h2>Sequels Memes Errors</h2>
+      {
+        sequelsmemes.map(([key,value]) => (
           <TestActorPictureAndMemesComponent name={key}link={value}/>
         ))
         
